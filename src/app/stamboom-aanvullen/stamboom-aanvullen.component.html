@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Familieleden toevoegen</h1>
+
+<div>
+  <h2>Wie is het familiehoofd?</h2>
+  <select [(ngModel)]="selectedFamilyMember" (change)="showTextbox()">
+    <option *ngFor="let familyMember of familyMembers" [value]="familyMember">{{ familyMember }}</option>
+  </select>
+  <input *ngIf="showAdditionalTextbox" type="text" [(ngModel)]="aanhang">
+</div>
+
+<div *ngFor="let textField of textFields">
+  <div class="kinderen_veld">
+    <div class="label-input">
+      <label class="familielid-label">Familielid</label>
+      <input *ngIf="textField.show" type="text" [(ngModel)]="textField.familyMember" class="pappa">
+    </div>
+    <div class="heart-symbol">&#10084;</div>
+    <div class="label-input">
+      <label class="geliefde-label">Geliefde</label>
+      <input *ngIf="textField.show" type="text" [(ngModel)]="textField.geliefde" class="mamma">
+    </div>
+  </div>
+  <button *ngIf="textField.show && !textField.childAdded" (click)="addChild(textField)" class="add-child-button kind-toevoegen">Kleinkind toevoegen</button>
+  <div *ngIf="textField.childAdded">
+    <div *ngFor="let child of textField.children" class="child-field">
+      <input type="text" [(ngModel)]="child.name">
+    </div>
+    <button *ngIf="textField.show && !textField.childLimitReached && textField.childAdded" (click)="addChild(textField)" class="add-child-button kind-toevoegen">Nog een Kleinkind toevoegen</button>
+  </div>
+</div>
+
+<button *ngIf="selectedFamilyMember" (click)="toggleTextField()" class="kind-toevoegen">Kind toevoegen</button>
+
+<div>
+  <button (click)="printTextFields()">verstuur</button>
+</div>
+
+</body>
+</html>
