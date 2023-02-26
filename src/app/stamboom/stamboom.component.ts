@@ -45,9 +45,9 @@ export class StamboomComponent {
 
   
 
-  readonly ROOT_URL_ouders = 'http://localhost:8080/getallouders';
-  readonly ROOT_URL_kinderen = 'http://localhost:8080/getallkinderen';
-  readonly ROOT_URL_kleinkinderen = 'http://localhost:8080/getallkleinkinderen';
+  readonly ROOT_URL_ouders = 'http://217.160.202.115:8080/getallouders';
+  readonly ROOT_URL_kinderen = 'http://217.160.202.115:8080/getallkinderen';
+  readonly ROOT_URL_kleinkinderen = 'http://217.160.202.115:8080/getallkleinkinderen';
 
 
 

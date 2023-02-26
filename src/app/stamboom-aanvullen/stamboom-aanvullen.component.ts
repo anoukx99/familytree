@@ -28,7 +28,7 @@ export class StamboomAanvullenComponent implements AfterViewInit {
   showAdditionalTextbox = false;
   aanhang = "";
 
-  readonly ROOT_URL_ouders = 'http://localhost:8080/getallouders';
+  readonly ROOT_URL_ouders = 'http://217.160.202.115:8080/getallouders';
 
   familyMembers: string[] = [];
 
@@ -72,7 +72,7 @@ export class StamboomAanvullenComponent implements AfterViewInit {
   }
 
   printTextFields() {
-    var sendString = "http://localhost:8080/addFamilieLeden/";
+    var sendString = "http://http://217.160.202.115:8080/addFamilieLeden/";
     sendString = sendString + this.selectedFamilyMember + "," + this.aanhang 
     var kinderen = "";
     var kleinkinder = "";
