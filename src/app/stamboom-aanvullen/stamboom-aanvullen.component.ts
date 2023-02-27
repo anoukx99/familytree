@@ -72,7 +72,7 @@ export class StamboomAanvullenComponent implements AfterViewInit {
   }
 
   printTextFields() {
-    var sendString = "http://http://217.160.202.115:8080/addFamilieLeden/";
+    var sendString = "http://217.160.202.115:8080/addFamilieLeden/";
     sendString = sendString + this.selectedFamilyMember + "," + this.aanhang 
     var kinderen = "";
     var kleinkinder = "";
