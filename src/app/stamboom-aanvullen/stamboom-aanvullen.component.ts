@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AppComponent } from '../app.component';
 
 interface TextField {
   show: boolean;
@@ -28,11 +29,11 @@ export class StamboomAanvullenComponent implements AfterViewInit {
   showAdditionalTextbox = false;
   aanhang = "";
 
-  readonly ROOT_URL_ouders = 'http://217.160.202.115:8080/getallouders';
+  readonly ROOT_URL_ouders = this.Appcomponent.apiUrl + '/getallouders';
 
   familyMembers: string[] = [];
 
-  constructor(private elementRef: ElementRef, private http: HttpClient) {}
+  constructor(private elementRef: ElementRef, private http: HttpClient, private Appcomponent:AppComponent) {}
 
   async ngOnInit() {
     //Ouders gedeelte
@@ -72,7 +73,7 @@ export class StamboomAanvullenComponent implements AfterViewInit {
   }
 
   printTextFields() {
-    var sendString = "http://217.160.202.115:8080/addFamilieLeden/";
+    var sendString = this.Appcomponent.apiUrl + "/addFamilieLeden/";
     sendString = sendString + this.selectedFamilyMember + "," + this.aanhang 
     var kinderen = "";
     var kleinkinder = "";

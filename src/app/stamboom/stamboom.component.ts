@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import FamilyTree from "@balkangraph/familytree.js";
 import {HttpClient} from '@angular/common/http';
+import { AppComponent } from '../app.component';
 import { tap } from 'rxjs';
 
 //type Ouders = Array<{id: number, fid: number, mid: number, naam1: string, naam2: string}>
@@ -45,13 +46,14 @@ export class StamboomComponent {
 
   
 
-  readonly ROOT_URL_ouders = 'http://217.160.202.115:8080/getallouders';
-  readonly ROOT_URL_kinderen = 'http://217.160.202.115:8080/getallkinderen';
-  readonly ROOT_URL_kleinkinderen = 'http://217.160.202.115:8080/getallkleinkinderen';
+  readonly ROOT_URL_ouders = this.AppComponent.apiUrl + '/getallouders';
+  readonly ROOT_URL_kinderen =  this.AppComponent.apiUrl + '/getallkinderen';
+  readonly ROOT_URL_kleinkinderen =  this.AppComponent.apiUrl + '/getallkleinkinderen';
 
 
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private AppComponent:AppComponent) {
+
    }
 
 
@@ -114,8 +116,13 @@ export class StamboomComponent {
 
 
       console.log(this.oid_kinderen)
+
+      console.log(this.ROOT_URL_kleinkinderen)
       
       console.log([...tesje, ...this.oudersData, ...this.KinderenData, ...this.KleinkinderenData])
+      setTimeout(() => {
+        location.reload();
+      }, 5000);
 
     
 

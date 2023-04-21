@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StamboomAanvullenComponent } from './stamboom-aanvullen/stamboom-aanvullen.component';
 import { StamboomComponent } from './stamboom/stamboom.component';
+import { VoorpaginaComponent } from './voorpagina/voorpagina.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StamboomAanvullenComponent,
-    StamboomComponent
+    StamboomComponent,
+    VoorpaginaComponent
   ],
   imports: [
     BrowserModule,
