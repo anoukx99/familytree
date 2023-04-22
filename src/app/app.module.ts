@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StamboomAanvullenComponent } from './stamboom-aanvullen/stamboom-aanvullen.component';
 import { StamboomComponent } from './stamboom/stamboom.component';
 import { VoorpaginaComponent } from './voorpagina/voorpagina.component';
+import { ProgrammaComponent } from './programma/programma.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { VoorpaginaComponent } from './voorpagina/voorpagina.component';
     AppComponent,
     StamboomAanvullenComponent,
     StamboomComponent,
-    VoorpaginaComponent
+    VoorpaginaComponent,
+    ProgrammaComponent
   ],
   imports: [
     BrowserModule,

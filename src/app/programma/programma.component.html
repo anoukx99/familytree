@@ -1,0 +1,16 @@
+<h1>Programma familiedag 2023</h1>
+<br>
+
+<table>
+    <tr>
+      <th>Tijd</th>
+      <th>Activiteit</th>
+      <th>Leeftijd</th>
+    </tr>
+    <tr *ngFor="let item of programData">
+      <td>{{item.time}}</td>
+      <td>{{item.activity}}</td>
+      <td>{{item.age}}</td>
+    </tr>
+  </table>
+  
