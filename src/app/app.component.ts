@@ -19,5 +19,5 @@ type DataType3 = { id: number, mid: number, name: string };
 
 export class AppComponent {
   title = 'familytree';
-  apiUrl = 'https://familiedag2023.nl:8080/';
+  apiUrl = 'https://familiedag2023.nl:8080';
 }
