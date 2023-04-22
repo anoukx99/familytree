@@ -37,7 +37,7 @@ export class StamboomAanvullenComponent implements AfterViewInit {
 
   async ngOnInit() {
     //Ouders gedeelte
-    console.log("aaai");
+console.log(this.ROOT_URL_ouders)
     this.myData = await this.http.get(this.ROOT_URL_ouders).toPromise();
     this.naam1 = this.myData.map((result2: { naam1: any; }) => result2.naam1);
     this.naam2 = this.myData.map((result2: { naam2: any; }) => result2.naam2);
