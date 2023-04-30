@@ -1,27 +1,70 @@
-button {
-    margin-top: 5px;
+.verstuur-knop {
+  background-color: #ffffff;
+  border-radius: .2rem;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-size: 16px;
+  margin: 10px 0;
+  justify-content: center;
+  padding: 10px 17px;
+  text-decoration: none;
+  width: 100px;
+  border: 2px black;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
   }
   
-  div {
+div {
     margin-top: 5px;
   }
 
-  .child-field {
+.content-container {
+  width: 100%;
+  
+}
+
+.container {
+  background: #bea5aa;
+  margin: 30px auto;
+  width: 50%;
+  padding-top: 15px;
+  padding-left: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  font-size: 16px;
+}
+
+.aanhang {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.child-field {
     margin-left: 100px;
   }
 
 /* CSS */
-.add-child-button {
-  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+
+.kind-toevoegen{
+  background-color: #f1486e;
   border-radius: .5rem;
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
   font-size: 16px;
   justify-content: center;
-  padding: 1rem 1.75rem;
+  padding: 10px 17px;
+  margin: 5px 0;
   text-decoration: none;
-  width: 100%;
+  width: 400px;
   border: 0;
   cursor: pointer;
   user-select: none;
@@ -29,15 +72,33 @@ button {
   touch-action: manipulation;
 }
 
-.add-child-button3:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+.kind-toevoegen:hover {
+  background-image:#fa2150;
 }
 
-@media (min-width: 768px) {
-  .add-child-button {
-    padding: 1rem 2rem;
-  }
+.add-child-button {
+  background-color: #3185fc;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  padding: 10px 12px;
+  margin: 5px 50px;
+  text-decoration: none;
+  width: 280px;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+
+.add-child-button:hover {
+  background-image:#3185fc;
+}
+
 
 .kinderen_veld {
   display: flex;
@@ -67,3 +128,11 @@ button {
   font-size: 20px;
   margin: 0 12px;
 }
+
+ h1 {
+   width: fit-content; /* or a fixed width in pixels */
+   padding-top: 0;
+   margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 50px;
+ }

@@ -70,7 +70,7 @@ console.log(this.ROOT_URL_ouders)
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument
-      .body.style.backgroundColor = 'lightblue';
+      .body.style.backgroundColor = 'white';
   }
 
   printTextFields() {

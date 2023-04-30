@@ -1,6 +1,6 @@
 body {
     width: 100vw;
-    background-color: #1D1D1D;
+    background-color: #ffffff;
     margin: 0;
     font-family: helvetica;
  }
@@ -9,7 +9,8 @@ body {
     width: 100vw;
     margin: 0 auto;
     height: 400px;
-    background-color: #161616;
+    stroke: #3185fc;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,16 +43,16 @@ body {
  }
  
  .card {
-    width: 100%;
-    max-width: 300px;
-    min-width: 200px;
+    width: 400px;
+    //max-width: 400px;
+    //min-width: 200px;
     height: 250px;
-    background-color: #292929;
+    background-color: #bea5aa;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
     border: 2px solid rgba(7, 7, 7, 0.12);
-    font-size: 16px;   
+    font-size: 18px;   
     transition: all 0.3s ease;
     position: relative;
     display: flex;
@@ -89,6 +90,8 @@ body {
     text-align: center;
     margin-top: 30px;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -99,6 +102,8 @@ body {
     margin: 0 auto;
     font-size: 13px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
     margin-top: 20px;
     color: white;
     font-weight: 200;
@@ -146,6 +151,9 @@ body {
 
  h1 {
    width: fit-content; /* or a fixed width in pixels */
+   padding-top: 30px;
    margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 50px;
  }
  
