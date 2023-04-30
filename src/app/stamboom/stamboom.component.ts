@@ -77,7 +77,7 @@ export class StamboomComponent {
       for (let i = 0; i < this.naam1.length; i++) {
         let obj; // declare obj outside if-else block
         if (this.naam2[i].length > 1){
-          obj = {id: this.id_data[i], fid: this.fid_data[i], mid: this.mid_data[i], name: this.naam1[i]+ " &#10084 " + this.naam2[i]}
+          obj = {id: this.id_data[i], fid: this.fid_data[i], mid: this.mid_data[i], name: this.naam1[i]+ " ♥ "  + this.naam2[i]}
         }
         else {
           obj = {id: this.id_data[i], fid: this.fid_data[i], mid: this.mid_data[i], name: this.naam1[i]}
@@ -95,7 +95,7 @@ export class StamboomComponent {
       for (let i = 0; i < this.id_kinderen.length; i++) {
         let obj2; // declare obj outside if-else block
         if (this.naam2_kinderen[i].length > 1){
-          obj2 = {id: this.id_kinderen[i], mid: this.oid_kinderen[i], name: this.naam1_kinderen[i] + " &#10084 " + this.naam2_kinderen[i]}
+          obj2 = {id: this.id_kinderen[i], mid: this.oid_kinderen[i], name: this.naam1_kinderen[i] + " ♥ "  + this.naam2_kinderen[i]}
         }
         else {
           obj2 = {id: this.id_kinderen[i], mid: this.oid_kinderen[i], name: this.naam1_kinderen[i]}
@@ -126,12 +126,35 @@ export class StamboomComponent {
 
     
 
-      if (tree) {
+ if (tree) {
+          FamilyTree.templates["myTemplate"] = Object.assign({}, FamilyTree.templates["tommy"]);  
+          FamilyTree.templates["myTemplate"].size = [100, 50];
+          FamilyTree.templates["myTemplate"].defs = "";
+          FamilyTree.templates["myTemplate"].node = '<rect x="0" y="0" height="{h}" width="{w}" stroke-width="1" fill="#adbdff" stroke="#434656" rx="7" ry="7"></rect>'
+          FamilyTree.templates["myTemplate_male"] = Object.assign({}, FamilyTree.templates["myTemplate"]);
+          FamilyTree.templates["myTemplate_female"] = Object.assign({}, FamilyTree.templates["myTemplate"]);
+          FamilyTree.templates["myTemplate"].ripple = {
+            radius: 100,
+            color: "#e6e6e6",
+        };
+        FamilyTree.templates["myTemplate"]["field_0"]  = '<text data-width="100" data-text-overflow="multiline-3" style="font-size: 18px; font-family: Arial" fill="#00000" x="50" y="30" text-anchor="middle">{val}</text>';
+        FamilyTree.templates["myTemplate"]["img_0"]  =
+        '<clipPath id="ulaImg">'
+        + '<circle cx="100" cy="150" r="40"></circle>'
+        + '</clipPath>'
+        + '<image preserveAspectRatio="xMidYMid slice" clip-path="url(#ulaImg)" xlink:href="{val}" x="60" y="110" width="80" height="80">'
+        + '</image>';
+    
+
+
           var family = new FamilyTree(tree, {
+              template: "myTemplate",
               nodeBinding: {
               field_0: "name",
+              img_0: "photo"
               },
           });
+          
           
 
           //Mid = ouders ID
