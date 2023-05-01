@@ -8,6 +8,9 @@ import { StamboomAanvullenComponent } from './stamboom-aanvullen/stamboom-aanvul
 import { StamboomComponent } from './stamboom/stamboom.component';
 import { VoorpaginaComponent } from './voorpagina/voorpagina.component';
 import { ProgrammaComponent } from './programma/programma.component';
+import {GojsAngularModule} from 'gojs-angular';
+import { Stamboom2Component } from './stamboom2/stamboom2.component';
+import { NgFamilyTreeModule } from './../assets/ng-family-tree';
 
 
 @NgModule({
@@ -16,14 +19,16 @@ import { ProgrammaComponent } from './programma/programma.component';
     StamboomAanvullenComponent,
     StamboomComponent,
     VoorpaginaComponent,
-    ProgrammaComponent
+    ProgrammaComponent,
+    Stamboom2Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    GojsAngularModule,
+    NgFamilyTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

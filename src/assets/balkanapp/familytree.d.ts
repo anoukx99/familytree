@@ -617,7 +617,7 @@ declare class FamilyTree extends FamilyTreeBase {
     toolbarUI: FamilyTree.toolbarUI;    
     config: FamilyTree.options
 
-    static fileUploadDialog(args: Object, callback: (file: any) => void): void;
+    static fileUploadDialog(scallback: (file: any) => void): void;
     static isMobile(): boolean;
     /**
      * Checks if the used libraris is licnsed or not
@@ -830,7 +830,6 @@ declare class FamilyTree extends FamilyTreeBase {
     /**
     * @ignore
     */
-    static element: HTMLElement;
 
     static randomId(): any;
     static searchUI: any;
@@ -1044,6 +1043,7 @@ declare namespace FamilyTree {
          * @param avatarUrl avatar url
          */
         setAvatar(avatarUrl?: string): void;
+        // static renderHeaderContent(title: string, photo: string, node: FamilyTree.node, data: object): string;        
     }
 
     interface searchUI {
@@ -1067,6 +1067,9 @@ declare namespace FamilyTree {
         createItem(img: string, id: string | number, first: string, second: string): string;
         helpView(): string;
         addMatchTag(id: string | number) : boolean;
+        input: HTMLElement;
+        searchTableWrapper: HTMLElement; 
+        lastSearch: Array<object>;        
     }
 
     
@@ -1188,6 +1191,7 @@ declare namespace FamilyTree {
         height?: Number,
         padding?: Number,
         position?: FamilyTree.position,
+        draggable?: boolean
     }
 
     interface position  {
@@ -1246,6 +1250,11 @@ declare namespace FamilyTree {
         to?: string | number,
         template?: string,
         label?: string
+    }
+    interface dottedLine {
+        from?: string | number,
+        to?: string | number,
+        tags?: Array<string>
     }
     interface orderBy {
         field?: string,
@@ -1365,6 +1374,16 @@ declare namespace FamilyTree {
          * ```
          */
         enableSearch?: boolean,
+        
+        /**
+         * You can disable family pan. Default value - *true*.
+         * ```typescript     
+         * var family = new FamilyTree('#tree', {
+         *      enablePan: false
+         * });
+         * ```
+         */
+        enablePan?: boolean,
 
         /**
          * Enable touch instead of mouse for particular devices with touchscreen/touchpad/trackpad. Default value - *false*.
@@ -1374,6 +1393,7 @@ declare namespace FamilyTree {
          * });
          * ```
          */
+        
         enableTouch?: boolean,
         /**
          * Enable keyboard navigation. Use "f" for find, arrows and space to navigate in the family. Default value - *false*.
@@ -1747,6 +1767,31 @@ declare namespace FamilyTree {
          * ```
          */
         slinks?: Array<FamilyTree.link>,
+
+         /**
+         * Adds dotted line.
+         * ```typescript     
+         * var family = new FamilyTree('#tree', {
+         *   dottedLines: [
+         *       {from: 6, to: 1 }
+         *   ]
+         * });
+         * ```
+         */
+        dottedLines?: Array<FamilyTree.dottedLine>,
+
+         /**
+         * Adds group dotted line.
+         * ```typescript     
+         * var family = new FamilyTree('#tree', {
+         *   groupDottedLines: [
+         *       {from: 6, to: 1 }
+         *   ]
+         * });
+         * ```
+         */
+        groupDottedLines?: Array<FamilyTree.dottedLine>,
+
         /**
          * The gap between each level. Default value - *60*
          * ```typescript     
@@ -2220,13 +2265,13 @@ declare class FamilyTreeBase {
     /**
      * 
      * @param id id of the existing partner node
-     * @param childId id of the child node
+     * @param childIds ids of the child nodes
      * @param partnerData partner data
      * @param callback called at the end of the animation
      * @param fireEvent indicates if the update event will be called or not
      * {@link https://balkan.app/FamilyTreeJS/Docs/CreateProgrammatically | See doc...} 
      */
-    addPartnerAndParentNodes(id: string | number, childId: string | number, partnerData: object, callback?: () => void, fireEvent?: boolean): void;
+    addPartnerAndParentNodes(id: string | number, childIds: Array<string | number>, partnerData: object, callback?: () => void, fireEvent?: boolean): void;
 
 
     /**
@@ -2324,5 +2369,3 @@ declare namespace FamilyTree {
         nodeTreeMenuCloseButton: string
     }
 }
-
-export default FamilyTree;
